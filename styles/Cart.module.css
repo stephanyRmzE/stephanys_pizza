@@ -1,0 +1,40 @@
+.container {
+  display: flex;
+  height: calc(100vh - 100px);
+  padding-top: 100px;
+  display: flex;
+
+}
+
+.left {
+  flex: 2;
+}
+
+.right {
+  flex: 1;
+}
+
+.imgContainer {
+  position: relative;
+  height: 100px;
+  width: 100px;
+}
+
+.table {
+  width: 100%;
+  border-spacing: 20px;
+}
+
+.name{
+  font-weight: 500;
+  color: #cd5003;
+  font-size: 1em;
+}
+.total{
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.td {
+  vertical-align: middle;
+}

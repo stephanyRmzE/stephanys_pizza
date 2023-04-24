@@ -1,0 +1,133 @@
+.container {
+  display: flex;
+  height: calc(100vh - 100px);
+  padding-top: 100px;
+
+}
+
+.left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right {
+  flex: 1;
+  padding: 20px 0;
+
+
+}
+
+
+.imgContainer {
+  width: 80%;
+  height: 90%;
+  position: relative;
+}
+
+.title {
+  margin: 0.6em 0 0.5em;
+  font-size: 2rem;
+}
+
+.price {
+  color: #d1411e;
+  font-size: 1.7rem;
+  font-weight: 400;
+  border-bottom: 1px solid #d1411e;
+}
+
+.desc {
+  margin: 1em 0;
+  font-size: 1.1rem;
+}
+
+.choose {
+  margin: 1.2em 0;
+}
+
+.sizes {
+  padding-top: 1em;
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.size {
+  cursor: pointer;
+  position: relative;
+}
+
+.sizeSmall {
+  position: relative;
+  height: 50px;
+  width: 50px;
+}
+
+.sizeMedium {
+  position: relative;
+  height: 70px;
+  width: 70px;
+}
+
+.sizeLarge {
+  position: relative;
+  height: 90px;
+  width: 90px;
+}
+
+.number {
+  position: absolute;
+  top: -5px;
+  right: -20px;
+  background-color: teal;
+  color: white;
+  font-size: 0.9rem;
+  padding: 0.1rem 0.4rem;
+  border-radius: 10px;
+}
+
+.ingredients {
+  display: flex;
+  justify-content: space-between;
+  width: 90%
+}
+
+.option {
+  display: flex;
+  justify-content: center;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.checkbox {
+  height: 1rem;
+  width: 1rem;
+}
+
+.checkboxLabel {
+  padding: 0 0 0 0.2rem;
+}
+
+.add{
+  margin-top: 1em;
+}
+
+.quantity {
+  width: 3em;
+  height: 2em;
+}
+
+.button {
+  height: 2em;
+  margin-left: 0.9em;
+  padding: 0 0.5rem;
+  background-color: rgb(218, 79, 44);
+  color: white;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 5px;
+}

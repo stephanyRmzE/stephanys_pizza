@@ -1,0 +1,12 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-color: #CD4F03;
+}
+
+.carouselContainer{
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+}
