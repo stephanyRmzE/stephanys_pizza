@@ -1,9 +1,7 @@
 .container {
   display: flex;
   height: calc(100vh - 100px);
-  padding-top: 100px;
-  display: flex;
-
+  padding: 150px 50px 50px;
 }
 
 .left {
@@ -25,16 +23,111 @@
   border-spacing: 20px;
 }
 
-.name{
+.name {
   font-weight: 500;
   color: #cd5003;
-  font-size: 1em;
+  font-size: 1.15em;
 }
-.total{
+
+.total {
   font-weight: 500;
   font-size: 1em;
 }
 
+.wrapper {
+  width: 90%;
+  max-height: 300px;
+  background-color: #333;
+  padding: 40px 50px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.title {
+  margin: 0 0 0.5em;
+}
+
+.totalText {
+  margin: 0.2em 0;
+}
+
+.totalTextTitle {
+  margin-right: 10px;
+}
+
+.button {
+  height: 30px;
+  color: #d1411e;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 1em 0 0;
+}
+
 .td {
   vertical-align: middle;
+}
+
+
+@media screen and (max-width: 480px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .table {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .trTitle {
+    display: none;
+  }
+
+  .tr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .imgContainer {
+    height: 200px;
+    width: 200px;
+  }
+
+  .name {
+    font-size: 1.5rem;
+  }
+
+  .td {
+    margin: 0.18rem;
+    font-size: 1.1rem;
+  }
+
+  .price::before {
+    content: "Price: ";
+    font-weight: 500;
+  }
+
+  .quantity::before {
+    content: "Quantity: ";
+    font-weight: 500;
+  }
+
+  .total::before {
+    content: "Total: ";
+    font-weight: 500;
+  }
+
+  .total {
+    font-size: 1.4rem;
+  }
+
+  .wrapper {
+    margin-top: 2em;
+    width: 100%;
+  }
 }

@@ -6,7 +6,13 @@ const Footer = () => {
   return (
     <div className={styles.container}>
        <div className={styles.item}>
-        <Image src='/img/footer.png' alt='footer' fill/>
+        <Image
+          src='/img/footer.png'
+          alt='footer'
+          fill
+          sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                33vw"/>
        </div>
        <div className={styles.item}>
         <div className={styles.card}>

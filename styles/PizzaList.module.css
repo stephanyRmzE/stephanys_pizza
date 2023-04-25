@@ -23,3 +23,14 @@
   flex-wrap: wrap;
   padding-top: 2em;
 }
+
+@media screen and (max-width: 480px) {
+  .title {
+      text-align: center;
+    }
+
+  .desc {
+    text-align: center;
+    width: 90%;
+    }
+}

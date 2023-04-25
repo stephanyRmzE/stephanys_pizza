@@ -15,14 +15,29 @@
   margin-bottom: 1rem;
 }
 
-.price{
+.price {
   font-size: 1.2rem;
-    font-weight: bold;
-    color: #555;
-    margin-bottom: 1rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 1rem;
 }
 
-.desc{
+.desc {
   text-align: center;
   color: #666;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 90%;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .price,
+  .desc {
+    font-size: 1.3rem;
+  }
 }
