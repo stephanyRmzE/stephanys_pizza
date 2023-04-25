@@ -1,12 +1,27 @@
 .container {
   height: 100vh;
+  padding-top: 100px;
   overflow: hidden;
   position: relative;
   background-color: #CD4F03;
 }
 
-.carouselContainer{
+.carouselDiv {
+  height: 100%;
+}
+
+.carouselContainer {
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  height: 100%;
+}
+
+.carouselImg {
+  margin: auto 0;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    height: 60vh;
+  }
 }

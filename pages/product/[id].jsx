@@ -18,7 +18,12 @@ const Product = () => {
       <div className={styles.container}>
         <div className={styles.left}>
           <div className={styles.imgContainer}>
-            <Image src={pizza.img} alt='pizza' fill style={{contain:"cover"}} />
+            <Image
+              src={pizza.img}
+              alt='pizza'
+              fill
+              style={{contain:"cover",
+                      objectPosition: 'center'}} />
           </div>
         </div>
         <div className={styles.right}>

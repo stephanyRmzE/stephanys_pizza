@@ -1,12 +1,12 @@
 .container {
   display: flex;
   height: calc(100vh - 100px);
-  padding-top: 100px;
+  padding: 100px 5% 0;
 
 }
 
 .left {
-  flex: 1;
+  flex: 0.8;
   height: 100%;
   display: flex;
   align-items: center;
@@ -14,7 +14,7 @@
 }
 
 .right {
-  flex: 1;
+  flex: 1.2;
   padding: 20px 0;
 
 
@@ -22,9 +22,11 @@
 
 
 .imgContainer {
-  width: 80%;
-  height: 90%;
+  width: 100%;
+  height: 100%;
   position: relative;
+  margin-right: 60px;
+
 }
 
 .title {
@@ -92,7 +94,7 @@
 .ingredients {
   display: flex;
   justify-content: space-between;
-  width: 90%
+  width: 80%
 }
 
 .option {
@@ -130,4 +132,76 @@
   font-weight: 500;
   cursor: pointer;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .imgContainer{
+    height: 300px;
+    margin: 1rem auto;
+  }
+
+  .right{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .title{
+    margin: 0em 0 0.5em;
+  }
+
+  .choose{
+    margin: 1.5rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+
+  .desc{
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .sizes{
+    width: 85%;
+  }
+
+  .ingredients{
+    width: 90%;
+    margin-bottom: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1rem;
+  }
+
+  .quantity{
+    height: 3em;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .button{
+    height: 3em;
+    padding: 0 1.5rem;
+    font-size: 1rem;
+    border-radius: 2px;
+  }
+
+  .option{
+    margin-top: 0.5rem;
+  }
+
+  .checkboxLabel{
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  .checkbox {
+    width: 1.3rem;
+    height: 1.3rem;
+  }
 }

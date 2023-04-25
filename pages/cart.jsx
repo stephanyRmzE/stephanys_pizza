@@ -8,7 +8,8 @@ const Cart = () => {
     <div className={styles.container}>
       <div className={styles.left}>
         <table className={styles.table}>
-          <tr className={styles.tr}>
+          <tbody>
+          <tr className={styles.trTitle}>
             <th>Product</th>
             <th>Name</th>
             <th>Extras</th>
@@ -16,6 +17,7 @@ const Cart = () => {
             <th>Quantity</th>
             <th>Total</th>
           </tr>
+          <tr className={styles.tr}>
             <td className={styles.td} >
               <div className={styles.imgContainer}>
                 <Image
@@ -25,7 +27,10 @@ const Cart = () => {
                 style={{
                 objectPosition: 'center',
                 objectFit:'cover'
-                }}/>
+                }}
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                  33vw"/>
               </div>
             </td>
             <td className={styles.td}>
@@ -43,21 +48,57 @@ const Cart = () => {
             <td className={styles.td}>
               <span className={styles.total}>$39.8</span>
             </td>
+          </tr>
+          <tr className={styles.tr}>
+            <td className={styles.td} >
+              <div className={styles.imgContainer}>
+                <Image
+                src='/img/pizza_margarita.png'
+                alt='pizza'
+                fill
+                style={{
+                objectPosition: 'center',
+                objectFit:'cover'
+                }}
+                sizes="(max-width: 768px) 100vw,
+                (max-width: 1200px) 50vw,
+                  33vw"/>
+              </div>
+            </td>
+            <td className={styles.td}>
+              <span className={styles.name}>MARGHERITA</span>
+            </td>
+            <td className={styles.td}>
+              <span className={styles.extras}> Double ingredients, spicy sauce</span>
+            </td>
+            <td className={styles.td}>
+              <span className={styles.price}>$16.9</span>
+            </td>
+            <td className={styles.td}>
+              <span className={styles.quantity}>2</span>
+            </td>
+            <td className={styles.td}>
+              <span className={styles.total}>$39.8</span>
+            </td>
+          </tr>
+          </tbody>
         </table>
       </div>
       <div className={styles.right}>
         <div className={styles.wrapper}>
           <h2 className={styles.title}> CART TOTAL</h2>
-          <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Subtotal:</b> $79.60
+          <div>
+            <div className={styles.totalText}>
+              <b className={styles.totalTextTitle}>Subtotal:</b> $79.60
+            </div>
+            <div className={styles.totalText}>
+              <b className={styles.totalTextTitle}>Discount:</b> $0.00
+            </div>
+            <div className={styles.totalText}>
+              <b className={styles.totalTextTitle}>Total:</b> $79.60
+            </div>
           </div>
-          <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Discount:</b> $0.00
-          </div>
-          <div className={styles.totalText}>
-            <b className={styles.totalTextTitle}>Total:</b> $79.60
-          </div>
-          <button>CHECKOUT NOW!</button>
+          <button className={styles.button}>CHECKOUT NOW!</button>
         </div>
       </div>
     </div>
