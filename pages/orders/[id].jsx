@@ -2,10 +2,11 @@ import React, {useState} from 'react'
 import Image from 'next/image'
 import styles from "../../styles/Order.module.css"
 import { AiFillCheckCircle } from "react-icons/ai";
+import axios from "axios"
 
-const Order = () => {
+const Order = ({order}) => {
 
-  const status = 0;
+  const status = order.status;
 
   const statusClass = (index) =>{
 
@@ -30,19 +31,19 @@ const Order = () => {
             <tr className={styles.trBody}>
 
               <td className={styles.td}>
-                <span className={styles.id}>123456789</span>
+                <span className={styles.id}>{order._id}</span>
               </td>
               <td className={styles.td}>
                 <span className={styles.name}>
-                  John Doe
+                  {order.customer}
                 </span>
               </td>
               <td className={styles.td}>
-                <span className={styles.address}>Elton st. 212-33 LA</span>
+                <span className={styles.address}>{order.address}</span>
               </td>
 
               <td className={styles.td}>
-                <span className={styles.total}>$79.80</span>
+                <span className={styles.total}>${order.total}</span>
               </td>
             </tr>
             </tbody>
@@ -104,13 +105,13 @@ const Order = () => {
           <h2 className={styles.title}> CART TOTAL</h2>
           <div>
             <div className={styles.totalText}>
-              <b className={styles.totalTextTitle}>Subtotal:</b> $79.60
+              <b className={styles.totalTextTitle}>Subtotal:</b> ${order.total}
             </div>
             <div className={styles.totalText}>
               <b className={styles.totalTextTitle}>Discount:</b> $0.00
             </div>
             <div className={styles.totalText}>
-              <b className={styles.totalTextTitle}>Total:</b> $79.60
+              <b className={styles.totalTextTitle}>Total:</b> ${order.total}
             </div>
           </div>
           <button className={styles.button}>PAID</button>
@@ -119,5 +120,15 @@ const Order = () => {
     </div>
   )
 }
+
+export const getServerSideProps = async ({params}) => {
+  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`)
+
+  return {
+    props: {
+      order: res.data,
+    },
+  };
+};
 
 export default Order

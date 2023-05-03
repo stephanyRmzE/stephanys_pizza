@@ -15,14 +15,11 @@
 }
 
 .item {
-  flex: 1;
+
   display: flex;
   align-items: center;
 }
 
-.item:nth-child(2) {
-  flex: 3;
-}
 
 .item:last-child {
   justify-content: flex-end;
@@ -39,12 +36,17 @@
 
 .texts {
   margin-left: 20px;
+  color: white;
 }
 
-.text {
+.text:first-child {
   font-size: 12px;
   font-weight: 500;
-  color: white;
+}
+
+.text:last-child {
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .phoneNumber {
@@ -58,18 +60,15 @@
 .list {
   padding: 0;
   display: flex;
-  align-content: center;
+  align-items: center;
   list-style: none;
   color: white;
-  justify-content: center;
-  flex: 1;
-
 }
 
 .listItem {
   margin: 20px;
   font-weight: 500;
-  padding: 10px 0;
+  cursor: pointer;
 }
 
 .cart {
@@ -96,12 +95,20 @@
 
 }
 
+.center {
+  float: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);}
+
 @media screen and (max-width:480px) {
   .item:nth-child(1) {
-      flex: 2;
-    }
+    flex: 2;
+  }
+
   .item:nth-child(2) {
-      display: none;
-    }
+    display: none;
+  }
 
 }

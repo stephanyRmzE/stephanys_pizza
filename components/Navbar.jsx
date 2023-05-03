@@ -2,8 +2,12 @@ import React from 'react'
 import styles from "../styles/Navbar.module.css"
 import Image from 'next/image'
 import { AiOutlineShoppingCart } from 'react-icons/ai';
+import {useSelector} from "react-redux"
+import Link from 'next/link';
 
 const Navbar = () => {
+  const quantity = useSelector((state) => state.cart.quantity)
+
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -19,20 +23,21 @@ const Navbar = () => {
       <div className={styles.item}>
         <ul className={styles.list}>
 
-          <li className={styles.listItem}>Products</li>
-          <li className={styles.listItem}>Menu</li>
-          <Image src='/img/typo_stephany.png' alt='logo' width={200} height={90}></Image>
-          <li className={styles.listItem}>Events</li>
 
-          <li className={styles.listItem}>Contact</li>
+          <Link className={styles.center} href='/' passHref >
+            <Image src='/img/typo_stephany.png' alt='logo' width={200} height={90}></Image>
+          </Link>
+
         </ul>
       </div>
-      <div className={styles.item}>
-        <div className={styles.cart}>
-          <AiOutlineShoppingCart className={styles.cartIcon} />
-          <div className={styles.count}>2</div>
+      <Link href='/cart' passHref>
+        <div className={styles.item}>
+          <div className={styles.cart}>
+            <AiOutlineShoppingCart className={styles.cartIcon} />
+            <div className={styles.count}>{quantity}</div>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   )
 }

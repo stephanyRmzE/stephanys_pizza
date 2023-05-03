@@ -39,9 +39,6 @@ const Featured = () => {
       setNewHeight(270);
     }}, [isMobile, newWidth, newHeight])
 
-
-
-
   return (
     <div className={styles.container}>
       <Carousel

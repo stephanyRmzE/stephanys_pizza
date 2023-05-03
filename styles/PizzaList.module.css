@@ -22,15 +22,21 @@
   justify-content: center;
   flex-wrap: wrap;
   padding-top: 2em;
+
+}
+
+.card {
+  width: 22%;
+  height: 420px;
 }
 
 @media screen and (max-width: 480px) {
   .title {
-      text-align: center;
-    }
+    text-align: center;
+  }
 
   .desc {
     text-align: center;
     width: 90%;
-    }
+  }
 }
