@@ -31,13 +31,16 @@ export default function Home({ pizzaList, admin }) {
 
 export const getServerSideProps = async (ctx) => {
 
+  let dev = process.env.NODE_ENV !== 'production';
+  let { DEV_URL, PROD_URL } = process.env;
+
   const myCookie = ctx.req?.cookies || "";
   let admin = false;
   if (myCookie.token === process.env.TOKEN) {
     admin = true;
   }
 
-  const res = await axios.get("http://localhost:3000/api/products")
+  const res = await axios.get(`${dev ? DEV_URL : PROD_URL}/api/products`)
 
   return {
     props: {
