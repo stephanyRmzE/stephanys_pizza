@@ -1,5 +1,6 @@
+
 .container {
-  width: 22%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,11 +9,15 @@
   cursor: pointer;
 }
 
+.link {
+  text-decoration: none;
+}
+
 .title {
   font-size: 1.4rem;
   font-weight: bold;
   color: #BB4600;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .price {

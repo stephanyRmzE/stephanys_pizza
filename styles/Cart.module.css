@@ -16,6 +16,7 @@
   position: relative;
   height: 100px;
   width: 100px;
+  margin: auto;
 }
 
 .table {
@@ -63,12 +64,30 @@
   font-weight: bold;
   cursor: pointer;
   margin: 1em 0 0;
+  width: 100%;
 }
 
 .td {
   vertical-align: middle;
+  text-align: center;
 }
 
+.paymentMethods{
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.payButton{
+  padding: 10px 5px;
+  background-color: white;
+  color: teal;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 5px;
+
+}
 
 @media screen and (max-width: 480px) {
   .container {

@@ -1,0 +1,38 @@
+.container {
+  height: calc(100vh - 100px);
+  padding: 150px 50px 0;
+  display: flex;
+}
+
+.item{
+  flex: 1;
+}
+
+.table{
+  width: 100%;
+  border-spacing: 20px;
+  text-align: left;
+}
+
+.imgContainer {
+  position: relative;
+  height: 50px;
+  width: 50px;
+  margin: auto;
+}
+
+.button{
+  border: none;
+  color: white;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.button:first-child{
+  background-color: teal;
+  margin-right: 10px;
+}
+
+.button:last-child{
+  background-color: crimson;
+}
