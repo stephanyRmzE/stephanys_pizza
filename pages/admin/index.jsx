@@ -9,10 +9,15 @@ const Index = ({products, orders}) => {
   const [orderList, setOrderList] = useState(orders)
   const status = ["Preparing", "On the way", "Delivered"]
 
+  let dev = process.env.NODE_ENV !== 'production';
+  let { DEV_URL, PROD_URL } = process.env;
+
 
   const handleDelete = async (id) => {
+
+
     try{
-      const res = await axios.delete("http://localhost:3000/api/products/"+ id)
+      const res = await axios.delete(`${dev ? DEV_URL : PROD_URL}/api/products/`+ id)
       setPizzaList(pizzaList.filter((pizza)=> pizza._id !== id))
     }catch(err){
       console.log(err)
@@ -24,8 +29,9 @@ const Index = ({products, orders}) => {
 
     const item = orderList.filter((order)=> order._id === id)[0]
     const currentStatus = item.status
+
     try{
-      const res = await axios.put("http://localhost:3000/api/orders/"+ id, {status: currentStatus + 1});
+      const res = await axios.put(`${dev ? DEV_URL : PROD_URL}/api/orders/`+ id, {status: currentStatus + 1});
       setOrderList([
         res.data,
         ...orderList.filter((order)=> order._id !== id)
@@ -140,6 +146,9 @@ const Index = ({products, orders}) => {
 }
 
 export const getServerSideProps = async (ctx) => {
+
+  let dev = process.env.NODE_ENV !== 'production';
+  let { DEV_URL, PROD_URL } = process.env;
   const myCookie = ctx.req?.cookies || "";
 
   if (myCookie.token !== process.env.TOKEN) {
@@ -151,8 +160,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productsRes = await axios.get("http://localhost:3000/api/products")
-  const ordersRes = await axios.get("http://localhost:3000/api/orders")
+  const productsRes = await axios.get(`${dev ? DEV_URL : PROD_URL}/api/products`)
+  const ordersRes = await axios.get(`${dev ? DEV_URL : PROD_URL}/api/orders`)
 
   return {
     props: {

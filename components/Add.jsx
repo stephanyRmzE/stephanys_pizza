@@ -42,7 +42,10 @@ const Add = ({setClose}) => {
         title, desc, prices, extraOptions, img:url,
       };
 
-      await axios.post("http://localhost:3000/api/products", newProduct)
+      let dev = process.env.NODE_ENV !== 'production';
+      let { DEV_URL, PROD_URL } = process.env;
+
+      await axios.post(`${dev ? DEV_URL : PROD_URL}/api/products`, newProduct)
       setClose(true)
     } catch (error) {
       console.log(error)

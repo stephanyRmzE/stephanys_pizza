@@ -26,8 +26,10 @@ const Cart = () => {
   const router = useRouter()
 
   const createOrder = async (data) => {
+    let dev = process.env.NODE_ENV !== 'production';
+    let { DEV_URL, PROD_URL } = process.env;
     try {
-      const res = await axios.post("http://localhost:3000/api/orders", data);
+      const res = await axios.post(`${dev ? DEV_URL : PROD_URL}/api/orders`, data);
       res.status === 201 && router.push("/orders/" + res.data._id);
       dispatch(reset());
     } catch (error) {

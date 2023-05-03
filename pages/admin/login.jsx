@@ -9,10 +9,12 @@ const Login = () => {
   const [password, setPassword] = useState(null)
   const [error, setError] = useState(false)
   const router = useRouter()
+  let dev = process.env.NODE_ENV !== 'production';
+  let { DEV_URL, PROD_URL } = process.env;
 
   const handleClick = async () => {
     try{
-      await axios.post("http://localhost:3000/api/login", {
+      await axios.post(`${dev ? DEV_URL : PROD_URL}/api/login`, {
         username,
         password,
       });
